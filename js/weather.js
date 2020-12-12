@@ -14,6 +14,7 @@ const KELVIN = 273.15;
 // Use your own key for the Weather, Get it here: https://openweathermap.org/
 const key = private.OPENWHEATERAPI_KEY;
 
+
 // Set Position function
 setPosition();
 
