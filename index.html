@@ -1,111 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Bento</title>
-    <link rel=" shortcut icon" type="image/png" href="icons/favicon.png" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
+    <link
+      rel=" shortcut icon"
+      type="image/png"
+      href="assets/icons/favicon.png"
+    />
+    <link rel="stylesheet" href="app.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-<body class="">
-    <button tabindex="-1" id="themeButton"><i id="bicon" data-feather="moon"></i></button>
+  <!-- 
+      ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
+      ╠╩╗║╣ ║║║ ║ ║ ║
+      ╚═╝╚═╝╝╚╝ ╩ ╚═╝
+      -->
+
+  <body class="">
+    <button id="themeButton">
+      <i id="themeIcon" icon-name="moon"></i>
+    </button>
     <div class="container">
-        <div class="fblock">
-            <div class="clock">
-                <div id="hour" class=""></div>
-                <div id="separator" class=""></div>
-                <div id="minutes" class=""></div>
-            </div>
-            <div id="greetings" class=""></div>
-        </div>
-        <div class="sblock">
-            <div class="sblock__date">
-                <div id="month" class=""></div>
-                <div id="day" class=""></div>
-            </div>
-            <div class="sblock__weather">
-                <div class="weather-icon">
-                    <img src="icons/OneDark/unknown.png" />
-                </div>
-                <div class="temperature-value">
-                    <p class="">- °<span class="g">c</span></p>
-                </div>
-                <div class="temperature-description">
-                    <p class=""></p>
-                </div>
-            </div>
-        </div>
-        <div class="qlink">
-            <a tabindex="1" href="https://github.com/" target="_self" class="qlink__link qlink__link-1">
-                <i class="qlink__icon" data-feather="github"></i>
-            </a>
-            <a tabindex="2" target="_self" href="https://mail.google.com/mail/u/0/" class="qlink__link qlink__link-2">
-                <i class="qlink__icon" data-feather="mail"></i>
-            </a>
-            <a tabindex="4" target="_self" href="https://presearch.org/" class="qlink__link qlink__link-3">
-                <i class="qlink__icon" data-feather="search"></i>
-            </a>
-            <a tabindex="5" target="_self" href="https://www.mercadolibre.com.mx/" class="qlink__link qlink__link-4">
-                <i class="qlink__icon" data-feather="shopping-bag"></i>
-            </a>
-            <a tabindex="3" href="https://medium.com/" target="_self" class="qlink__link qlink__link-5">
-                <i class="qlink__icon" data-feather="book-open"></i>
-            </a>
-            <a tabindex="6" target="_self" href="https://www.youtube.com/" class="qlink__link qlink__link-6">
-                <i class="qlink__icon" data-feather="youtube"></i>
-            </a>
-        </div>
+      <!-- Clock and Greetings  -->
 
-        <div class="card qlist qlist__1">
-            <i class="qlist__head" data-feather="code"></i>
-            <a target="_self" href="https://console.firebase.google.com" class="qlist__link">Firebase</a>
-            <a target="_self" href="https://www.heroku.com/" class="qlist__link">Heroku</a>
-            <a target="_self" href="https://cloud.mongodb.com/" class="qlist__link">Atlas</a>
-            <a target="_self" href="https://portal.azure.com/" class="qlist__link">Azure</a>
+      <div class="timeBlock">
+        <div class="clock">
+          <div id="hour" class=""></div>
+          <div id="separator" class=""></div>
+          <div id="minutes" class=""></div>
         </div>
+        <div id="greetings" class=""></div>
+      </div>
 
-        <div class="card qlist qlist__2">
-            <i class="qlist__head" data-feather="coffee"></i>
-            <!-- <a
-                    href="https://www.linkedin.com"
-                    target="_self"
-                    class="qlist__link"
-                    >LinkedIn</a
-                >
-                <a
-                    href="https://dribbble.com/"
-                    target="_self"
-                    class="qlist__link"
-                    >Dribble</a
-                > -->
-            <a href="https://www.udemy.com/" target="_self" class="qlist__link">Udemy</a>
-            <a href="https://www.Netflix.com/" target="_self" class="qlist__link">Netflix</a>
-            <a href="https://www.reddit.com/" target="_self" class="qlist__link">Reddit</a>
-            <!-- <a
-                    href="https://www.figma.com/files/recent"
-                    target="_self"
-                    class="qlist__link"
-                    >Figma</a
-                > -->
+      <!-- Date and Weather  -->
+
+      <div class="weatherBlock">
+        <div class="date">
+          <div id="month" class=""></div>
+          <div id="day" class=""></div>
         </div>
+        <div class="weather">
+          <div class="weatherIcon">
+            <img src="assets/icons/OneDark/unknown.png" />
+          </div>
+          <div class="weatherValue">
+            <p class="">- °<span class="g">c</span></p>
+          </div>
+          <div class="weatherDescription">
+            <p class=""></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 
+        ┌┐ ┬ ┬┌┬┐┌┬┐┌─┐┌┐┌┌─┐
+        ├┴┐│ │ │  │ │ ││││└─┐
+        └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘ 
+        -->
+
+      <div class="buttons" id="buttonsContainer"></div>
+
+      <!-- 
+        ┬  ┬┌─┐┌┬┐┌─┐
+        │  │└─┐ │ └─┐
+        ┴─┘┴└─┘ ┴ └─┘
+        -->
+
+      <div class="card list list__1" id="list_1"></div>
+
+      <div class="card list list__2" id="list_2"></div>
     </div>
-    <form id="searchForm" onsubmit="searchGoogle()">
-        <input type="text" id="searchInput" oninput="displayInputValue()" style="position: absolute; left: -9999px;" autocomplete="off">
-        <input type="submit" hidden>
-    </form>
-    <script src="js/time.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="js/greeting.js"></script>
-    <script src="js/private.js"></script>
-    <script src="js/weather.js"></script>
-    <script src="js/search.js"></script>
+
+    <!-- Config  -->
+    <script src="config.js"></script>
+
+    <!-- Scripts  -->
+    <script src="assets/js/time.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/greeting.js"></script>
+    <script src="assets/js/weather.js"></script>
+
+    <script src="assets/js/cards.js"></script>
+    <script src="assets/js/lists.js"></script>
     <script>
-        feather.replace();
+      lucide.createIcons();
     </script>
-</body>
+  </body>
 
-<!-- Coded and designed by Miguel R. Ávila: https://github.com/MiguelRAvila -->
-
+  <!-- Developed and designed by Miguel R. Ávila: -->
+  <!-- https://github.com/migueravila -->
 </html>
